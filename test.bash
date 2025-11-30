@@ -8,11 +8,11 @@ ng () {
 res=0
 
 
-out=$(seq 5 | ./plus)
+out=$(seq 5 | ./average)
 [ "${out}" = 3.0 ] || ng "$LINENO"
 
 
-out=$(echo あ 1 2 | ./plus)
+out=$(echo あ 1 2 | ./average)
 [ "${out}" = 1.5 ] || ng "$LINENO"  
 
 
