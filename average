@@ -1,18 +1,20 @@
 #!/usr/bin/python3
-#SPDX-FileCopyrightText: 2025 Koma Tsutsumi
+# SPDX-FileCopyrightText: 2025 Koma Tsutsumi
 # SPDX-License-Identifier: GPL-3.0-only
 
 import sys
 
-args = sys.argv[1:]  
+numbers = []
 
+for line in sys.stdin:
+    line = line.strip()
+    if not line:
+        continue
+    try:
+        numbers.append(float(line))
+    except ValueError:
+        continue
 
-total = 0.0
-count = 0
-
-for a in args:
-    total += float(a)
-    count += 1
-
-print(total / count)
+avg = sum(numbers) / len(numbers)
+print(avg)
 
