@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+#SPDX-FileCopyrightText: 2025 Koma Tsutsumi
+# SPDX-License-Identifier: GPL-3.0-only
+
+import sys
+
+total = 0.0
+count = 0
+
+for line in sys.stdin:
+    total += float(line)
+    count += 1
+
+if count > 0:
+    print(total / count)
+else:
+    print(0)
+
+
