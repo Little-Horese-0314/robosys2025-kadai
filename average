@@ -10,11 +10,12 @@ for line in sys.stdin:
     line = line.strip()
     if not line:
         continue
-    try:
-        numbers.append(float(line))
-    except ValueError:
-        continue
+    for item in line.split():
+        try:
+            numbers.append(float(item))
+        except ValueError:
+            continue  
+
 
 avg = sum(numbers) / len(numbers)
 print(avg)
-
